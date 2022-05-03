@@ -4,7 +4,7 @@ if(isset($_POST["submit"]))
 {
     $uid = $_POST["uid"];
     $pwd = $_POST["pwd"];
-    $pwdRepeat = $_POST["pwdRepeat"];
+    $pwdRepeat = $_POST["pwdrepeat"];
     $email = $_POST["email"];
 
 
