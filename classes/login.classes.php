@@ -18,7 +18,7 @@ class Login extends Dbh{
             exit();
         }
 
-        $pwdHashed = $stmt->fetchAll(PDO:FETCH_ASSOC);
+        $pwdHashed = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $checkPwd = password_verify($pwd, $pwdHashed[0]["users_pwd"]);
 
         if($checkPwd == false){
@@ -39,7 +39,7 @@ class Login extends Dbh{
                 exit();
             }
 
-            $user = $stmt->fetchAll(PDO:FETCH_ASSOC);
+            $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             session_start();
             $_SESSION["userid"] = $user[0]["users_id"];

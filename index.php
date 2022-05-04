@@ -17,6 +17,17 @@ session_start();
 <section class="index-login">
     <div class="wrapper">
         <div class="index-login-signup">
+        <?php
+            if(isset($_SESSION["userid"]))
+            {
+                ?>
+                <li><a href="#"><?php echo $_SESSION["useruid"]; ?> </a></li>
+                <li><a href="includes/logout.inc.php">LOGOUT</a></li>
+                <?php
+            }
+            else
+            {
+                ?>
             <h4>SIGN UP</h4>
             <p> Sign-up here!</p>
             <form action="includes/signup.inc.php" method="POST">
@@ -30,13 +41,16 @@ session_start();
         </div>
         <div class="index-login-login">
             <h4>LOGIN</h4>
-            <p> Sign-up here!</p>
+            <p> Login here!</p>
             <form action="includes/login.inc.php" method="POST">
                 <input type="text" name="uid" placeholder="Username">
                 <input type="password" name="pwd" placeholder="Password">
                 <br>
                 <button type="submit" name="submit"> LOGIN </button>
             </form>
+            <?php
+            }
+            ?>
         </div>
     </div>
 </section>
